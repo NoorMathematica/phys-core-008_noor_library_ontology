@@ -7,6 +7,6 @@ XREF of previous work and references avalible [here](https://raw.githubuserconte
 
 ---
 
-For inquiries please email: noor.research.collective@proton.me
+For inquiries please email: [Lina](noor.research.collective@proton.me)
 
 #thebeatgoeson #lovemultiplies
