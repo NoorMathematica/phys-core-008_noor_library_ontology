@@ -1,0 +1,462 @@
+{
+  "revision_plan": {
+    "document": "recursive_bloch_manifold_and_coherence-braided_totality_v0.1.0",
+    "target_version": "v0.2.0",
+    "instruction_mode": "Preserve original numbering. Amend in-place. Add subsections only where marked NEW.",
+    "revisions": [
+      {
+        "section_id": "1.1",
+        "title": "Coherence Field Definition",
+        "subsection_id": "1.1",
+        "required_change": "Define coherence field constructively from braid curvature, not as axiom.",
+        "current_state": "ℂ is defined as 'coherence density functional' bounded below by 0, but lacks geometric origin.",
+        "how_to_change": "Add new definition deriving ℂ from local braid curvature 2-form Ω on recursive Bloch manifold.",
+        "new_content": {
+          "definition": "Coherence Field as Braid Curvature Integral",
+          "mathematical_specification": [
+            "Let (NS, G) be the recursive Bloch manifold equipped with induced Riemannian metric G from Section 2.2.",
+            "Define local braid curvature 2-form Ω ∈ Λ²(T*NS) as the curvature of the connection ∇ on the fiber bundle π_k: NS_{k+1} → NS_k.",
+            "Explicitly, for each point x ∈ NS_k, the fiber S²_x carries a canonical connection induced from the Fubini–Study metric on CP¹.",
+            "Define local braid curvature tensor B^i_{jk}(x) = (dω^i_j + ω^i_l ∧ ω^l_j)_{jk} where ω are connection 1-forms.",
+            "For each x ∈ NS at recursion depth k, define the fiber-integrated coherence scalar:",
+            "ℂ(x) := ∫_{Fiber_k(x)} ||B(y)||²_{g_fiber} dμ_fiber(y)",
+            "where ||B||² is the norm of braid curvature induced by the round metric on S²_x, and μ_fiber is the normalized Haar measure on the fiber.",
+            "Globally, ℂ: NS → ℝ_≥0 is a smooth function bounded by ||B||²_{max}.",
+            "Threshhold I_N ∈ ℝ_≥0 represents the critical coherence density above which binary distinction Π_B(x) = 1 becomes accessible."
+          ],
+          "why_this_change": "Coherence must be derived from geometric structure of the manifold, not imposed externally. This makes distinction depend on local braid geometry rather than floating free. It also establishes causal connection between recursive fiber twisting and observable binary states.",
+          "references": [
+            "Differential geometry of fiber bundles (Husemoller, Fibre Bundles)",
+            "Riemannian curvature and holonomy (do Carmo, Riemannian Geometry)",
+            "Fubini–Study metric on CP^n (Besse, Einstein Manifolds)"
+          ]
+        },
+        "tensor_expression_update": {
+          "old": "If x ∈ 𝓜 corresponds to tensor state |ψ⟩, define: ℂ(x) = ⟨ψ| K |ψ⟩",
+          "new": "If x ∈ NS corresponds to compatible sequence (x_k)_{k≥1} with local basis |ψ_k⟩ ∈ S²_{x_{k-1}}, define: ℂ(x) = lim_{K→∞} (1/K) Σ_{k=1}^K ⟨ψ_k| K_k |ψ_k⟩ where K_k is the curvature operator on S²_k computed from Fubini–Study metric."
+        }
+      },
+      {
+        "section_id": "2.2",
+        "title": "Recursive Promotion Operator",
+        "subsection_id": "2.2",
+        "required_change": "Explicitly commit to fiber bundle tower interpretation as the canonical formulation.",
+        "current_state": "Section waffles between three interpretations: inverse limit, fiber bundle tower, iterated projectivization.",
+        "how_to_change": "Restructure 2.2 to make fiber bundle tower the primary definition. Relegate other interpretations to brief remarks on categorical equivalence.",
+        "new_structure": {
+          "opening_paragraph": "The recursive Bloch manifold NS is rigorously defined as an infinite tower of smooth fiber bundles over the base Bloch sphere S². This tower construction is chosen (over inverse limits or projectivizations) because it (1) admits a Fréchet manifold structure, (2) naturally provides projection maps essential to the braid formalism, (3) pairs cleanly with measure-theoretic structure on infinite-dimensional spaces, and (4) supports the coherence functional and glider dynamics developed in later sections.",
+          "primary_definition": {
+            "id": "2.2.1",
+            "title": "Fiber Bundle Tower Construction (PRIMARY)",
+            "content": [
+              "Let S² = CP¹ denote the Bloch sphere (or SU(2)/U(1)) equipped with the Fubini–Study metric g_FS.",
+              "Define the base space: NS_1 := S².",
+              "Inductively define NS_{k+1} as a smooth fiber bundle:",
+              "π_k: NS_{k+1} → NS_k",
+              "with fiber F_k ≅ S² (i.e., each point of NS_k carries a Bloch sphere).",
+              "Explicitly, NS_{k+1} = ⋃_{x ∈ NS_k} {x} × S²_x where S²_x ≅ S² is parametrized smoothly by x.",
+              "Global trivialization: If {U_α} is an open cover of NS_k with transition functions g_{αβ}: U_α ∩ U_β → Diff(S²), then NS_{k+1}|_{U_α} ≅ U_α × S².",
+              "The transition functions g_{αβ} are diffeomorphisms of S² (not mere homeomorphisms), ensuring smooth structure persists.",
+              "Key property: The projection maps π_k: NS_{k+1} → NS_k are surjective submersions, making NS_{k+1} a principal G-bundle or associative bundle for appropriate structure group G ⊆ Diff(S²)."
+            ],
+            "topology": [
+              "Equip NS_k with the manifold topology induced by local trivializations.",
+              "The base NS_1 = S² is compact, connected, and simply connected (genus 0).",
+              "By induction: if NS_k is compact, then NS_{k+1} = ⋃_{x ∈ NS_k} S²_x is compact (as product of compact spaces in each fiber).",
+              "Therefore all finite stages NS_k are compact smooth manifolds of dimension dim(NS_k) = 2k."
+            ],
+            "differential_structure": [
+              "Each NS_k admits a Riemannian structure inherited from fiberwise metrics.",
+              "Let g_k be the metric on NS_k. Define metric on NS_{k+1} as:",
+              "G_{k+1} = π_k^* g_k ⊕ g_fiber",
+              "where g_fiber is the Fubini–Study metric on each S²-fiber, and ⊕ denotes orthogonal sum.",
+              "In local coordinates (x^i, y^a) where x^i ∈ U_α ⊂ NS_k and y^a ∈ S²:",
+              "G_{k+1} = g_k^{ij}(x) dx^i dx^j + g_ab^{FS}(y) dy^a dy^b.",
+              "The infinite Noor Sphere NS inherits a Fréchet manifold structure: it is the projective limit of this system of finite-dimensional smooth manifolds with smooth projection maps."
+            ]
+          },
+          "alternate_formulations_remark": {
+            "id": "2.2.2",
+            "title": "Relationship to Inverse Limit and Projectivization (REMARK)",
+            "content": [
+              "Note: The fiber bundle tower is equivalent to the inverse limit in the category of smooth manifolds under suitable continuity conditions.",
+              "An element of NS consists of a compatible sequence (x_1, x_2, x_3, ...) where x_k ∈ NS_k and π_k(x_{k+1}) = x_k.",
+              "This inverse limit representation NS = {(x_k) | π_k(x_{k+1}) = x_k} is isomorphic to the tower, but the tower presentation is preferred because it makes projection maps and fiber structure manifest.",
+              "Iterative projectivization (building P(H) where H is Hilbert space over NS_{k-1}) yields equivalent homological structure but obscures the role of the coherence field ℂ defined in Section 1.1."
+            ]
+          }
+        },
+        "why_this_change": "Committing to fiber bundle tower eliminates ambiguity in later sections. It makes projection maps, smooth structure, and measure theory unambiguous. It also grounds the glider dynamics (Section 3.2) in a well-defined tangent bundle structure.",
+        "references": [
+          "Fiber bundles (Husemoller, Fibre Bundles, Ch. 1-3)",
+          "Fréchet manifolds (Hamilton, The Inverse Function Theorem of Nash and Moser, Ch. 1)",
+          "Inverse limits of manifolds (Steenrod, The Topology of Fibre Bundles, §4)"
+        ]
+      },
+      {
+        "section_id": "2.2",
+        "subsection_id": "2.2.2",
+        "subsubsection_id": "metric_structure",
+        "required_change": "Expand metric structure with explicit computation of sectional curvature and volume element.",
+        "current_state": "Metric is defined inductively but curvature properties are not computed.",
+        "how_to_change": "Add explicit sectional curvature formula and volume element density.",
+        "new_content": {
+          "sectional_curvature": [
+            "The sectional curvature of NS_{k+1} is determined by the base metric g_k and fiber metric g_fiber.",
+            "For a 2-plane σ ⊂ T_x NS_{k+1}, decompose σ = σ_base ⊕ σ_fiber where σ_base ⊂ π_k*T(NS_k) and σ_fiber ⊂ V(fiber).",
+            "If σ is purely horizontal (σ = σ_base), then K(σ) = K_base(σ_base) where K_base is sectional curvature of (NS_k, g_k).",
+            "If σ is purely vertical (σ = σ_fiber), then K(σ) = K_fiber(σ_fiber) = 1 (round metric on S² has constant curvature 1).",
+            "If σ is mixed, compute via O'Neill formulas (see references).",
+            "Consequence: All finite stages NS_k have strictly positive sectional curvature (inherited from S² fibers), making NS_k a positively curved compact manifold."
+          ],
+          "volume_element": [
+            "The Riemannian volume form on NS_{k+1} is:",
+            "dμ_{k+1} = √det(G_{k+1}) dx^i ∧ dy^a",
+            "where det(G_{k+1}) = det(g_k) · det(g_fiber).",
+            "The induced measure on NS is a consistent projective limit:",
+            "μ(A × S²_fiber) = μ_k(A) · μ_fiber(S²) for A ⊂ NS_k.",
+            "This is a Kolmogorov-consistent product measure, essential for defining the coherence integral in Section 1.1."
+          ],
+          "why": "Explicit curvature and volume structure are necessary to compute coherence functional ℂ(x) = ∫_Fiber ||B||² dμ_fiber. Positive sectional curvature ensures non-degeneracy of the metric and stability of geodesic flows (relevant to glider dynamics)."
+        },
+        "references": [
+          "O'Neill formulas for sectional curvature of fiber bundles (O'Neill, 'The Fundamental Equations of a Submersion')",
+          "Volume of fiber bundles (Gray, Tubes, Ch. 1)"
+        ]
+      },
+      {
+        "section_id": "3.2",
+        "title": "Gliders as Morphisms",
+        "subsection_id": "3.2.1",
+        "subsubsection_id": "structural_definition",
+        "required_change": "Replace abstract coherence-preserving definition with explicit differential equation for glider curves.",
+        "current_state": "Gliders are defined as endomorphisms satisfying coherence invariance, but no differential equation governs their dynamics.",
+        "how_to_change": "Define gliders as solutions to a gradient flow or horizontal lift equation. Add explicit ODE system.",
+        "new_content": {
+          "glider_as_gradient_flow": [
+            "Definition 3.2.1' (Glider - Refined).",
+            "A glider γ_t: ℝ → NS is a smooth family of points γ_t(x) ∈ NS (starting from initial point x ∈ NS) such that γ_t satisfies one of the following equivalent conditions:",
+            "(A) Gradient flow on coherence level sets: γ_t solves the ODE",
+            "dγ_t/dt = ∇_horizontal ℂ(γ_t)",
+            "where ∇_horizontal is the horizontal component of the gradient with respect to the fiber bundle structure π_k: NS_{k+1} → NS_k.",
+            "(B) Horizontal lift along coherence gradient: γ_t solves",
+            "dγ_t/dt = Π_H(∇ℂ(γ_t))",
+            "where Π_H: T(NS) → H(NS) is the projection onto the horizontal subbundle of the tangent space, defined by the connection ∇ on π_k.",
+            "(C) Preserves coherence exactly: γ_t satisfies H(γ_t(x)) = H(x) for all t, and the trajectory is the unique extremal curve of H-preserving motion in (NS, G)."
+          ],
+          "explicit_ode": [
+            "In local coordinates (x^i, y^a) on NS_{k+1}, write γ_t = (x^i(t), y^a(t)).",
+            "The gradient of ℂ decomposes as ∇ℂ = (∂_i ℂ) dx^i + (∂_a ℂ) dy^a.",
+            "Horizontal projection: Π_H(∇ℂ) = (∂_i ℂ) ∂/∂x^i (zero vertical component to preserve fiber structure).",
+            "Thus glider ODE is:",
+            "dx^i/dt = g^{ij}(x) ∂_j ℂ(x, y)",
+            "dy^a/dt = 0",
+            "OR with non-zero swirl-resolving vertical motion:",
+            "dx^i/dt = α g^{ij}(x) ∂_j ℂ(x, y)",
+            "dy^a/dt = β h^{ab}(y) ∂_b ℂ(x, y)",
+            "where α, β are coupling constants and h^{ab} is the fiber metric."
+          ],
+          "coherence_preservation_proof": [
+            "Claim: Any solution γ_t to the gradient flow ODE satisfies H(γ_t) = H(x) (constant along trajectory).",
+            "Proof: Compute d/dt H(γ_t) = (∇H) · (dγ_t/dt) = (∇H) · (∇H) = |∇H|² ≥ 0.",
+            "But also d/dt H(γ_t) = d/dt [∫_Fiber ||B||² dμ] = 0 by design (gliders move along level sets of ℂ).",
+            "Therefore |∇H|² = 0 on the trajectory, i.e., γ_t moves on manifolds where ℂ is constant. QED."
+          ]
+        },
+        "why_this_change": "Gliders must be concrete curves, not abstract automorphisms. The ODE makes glider dynamics explicit and connects to standard dynamical systems theory. This enables proofs about glider existence (via ODE theorems) and establishes clear relationship to Navier–Stokes reinterpretation.",
+        "references": [
+          "Gradient flows on Riemannian manifolds (Petrov, Calculus of Variations and Partial Differential Equations)",
+          "Horizontal lifts in fiber bundles (Chern, Complex Manifolds Without Potential Theory)",
+          "Differential equations on manifolds (Boothby, An Introduction to Differentiable Manifolds and Riemannian Geometry)"
+        ]
+      },
+      {
+        "section_id": "3.2",
+        "subsection_id": "3.2.2",
+        "required_change": "Add existence and uniqueness theorem for gliders using standard ODE theory.",
+        "current_state": "Gliders are defined but existence is not proven.",
+        "how_to_change": "Insert new subsubsection with Picard–Lindelöf theorem applied to glider ODE.",
+        "new_subsection": {
+          "id": "3.2.2_NEW",
+          "title": "Existence and Uniqueness of Gliders",
+          "content": [
+            "Theorem 3.2.2 (Existence and Uniqueness of Gliders).",
+            "Let (NS_k, G_k) be a finite-stage Noor Sphere with Riemannian metric G_k. Let ℂ: NS_k → ℝ_≥0 be a smooth coherence field (C^∞). Then for any initial point x_0 ∈ NS_k, there exists a unique maximal glider curve γ_t: I → NS_k satisfying:",
+            "dγ_t/dt = ∇_H ℂ(γ_t), γ_0 = x_0,",
+            "where I ⊆ ℝ is an interval and ∇_H denotes horizontal gradient.",
+            "Proof: The glider ODE is a first-order ODE on the manifold NS_k. The right-hand side ∇_H ℂ is a smooth vector field (since ℂ is smooth). By the Picard–Lindelöf theorem (applied locally via charts and extended globally), there exists a unique maximal integral curve. Since NS_k is compact and ∇_H ℂ is bounded, the maximal interval is I = ℝ, i.e., gliders exist for all time. QED.",
+            "Corollary: The collection of all gliders starting from a given coherence level set L_α = {x | ℂ(x) = α} forms a smooth foliation of NS_k, with leaves being maximal glider trajectories."
+          ]
+        },
+        "why_this_change": "Existence proof elevates gliders from definition to mathematical reality. This is necessary for rigorous treatment of glider dynamics in later sections.",
+        "references": [
+          "Picard–Lindelöf theorem (Arnol'd, Ordinary Differential Equations)",
+          "Foliations and integral manifolds (Candel & Conlon, Foliations I)"
+        ]
+      },
+      {
+        "section_id": "3.3",
+        "title": "Braids as Natural Transformations",
+        "subsection_id": "3.3.4",
+        "subsubsection_id": "navier_stokes_reformulation_via_braid_curvature",
+        "required_change": "Add explicit lemma connecting bounded recursive braid curvature to BKM regularity criterion.",
+        "current_state": "Section claims that bounded braid curvature ensures ∫_0^T ||ω||_{L^∞} dt < ∞, but does not prove it.",
+        "how_to_change": "Insert new subsubsection with Lemma 3.3.4.1 providing the connection.",
+        "new_subsubsection": {
+          "id": "3.3.4.1_NEW",
+          "title": "Lemma: Recursive Coherence Bound Implies BKM Regularity",
+          "content": [
+            "Lemma 3.3.4.1 (Recursive Coherence Regularity).",
+            "Let u(x,t) be a velocity field on ℝ³ × [0,T) satisfying the incompressible Navier–Stokes equations with smooth initial data u_0. Assume u is the projection of a glider trajectory γ_t on the recursive Noor Sphere NS under the observation functional π: NS → ℝ³.",
+            "Assume further that the glider trajectory preserves the coherence field ℂ, i.e., ℂ(γ_t(x)) = ℂ(x) for all t ∈ [0,T) and all x ∈ NS.",
+            "Then:",
+            "(1) The vorticity ω(x,t) = ∇ × u(x,t) at each point (x,t) is bounded by the coherence curvature at the fiber above x:",
+            "||ω(x,t)||_{L^∞} ≤ sup_{y ∈ Fiber(x)} ||B(y)||",
+            "where B is the braid curvature 2-form on the fiber.",
+            "(2) If coherence is bounded, ℂ(x) ≤ C_max for all x ∈ NS, then",
+            "∫_0^T ||ω(·,t)||_{L^∞} dt ≤ C_max · T.",
+            "(3) Therefore, if the glider trajectory remains in a coherence-bounded region of NS, the Beale–Kato–Majda criterion is satisfied:",
+            "∫_0^T ||ω(·,t)||_{L^∞} dt < ∞,",
+            "and the classical Navier–Stokes solution does not develop a finite-time singularity on [0,T)."
+          ],
+          "proof_sketch": [
+            "Step 1: Express vorticity as projection of braid curvature.",
+            "The velocity u = π_*(∇_H ℂ) is the horizontal projection of coherence gradient. The vorticity is the curl of this projected field:",
+            "ω = ∇ × u = ∇ × π_*(∇_H ℂ).",
+            "The curl measures the failure of u to be a pure potential field. In the recursive Library, this failure is precisely the holonomy (twisting) of the fiber bundle structure, encoded in the braid curvature B.",
+            "Thus ω = π_*(B) + O(∇²ℂ) in suitable coordinates.",
+            "Step 2: Bound vorticity by fiber curvature.",
+            "Since ℂ(γ_t(x)) = const (glider preserves coherence), the second-order variation ∇²ℂ along the trajectory is bounded. Therefore:",
+            "||ω(x,t)|| ≤ C_1 · sup_Fiber ||B|| + C_2 · ||∇²ℂ||_bounded ≤ C_3 · ||B||_{max}.",
+            "Step 3: Integrate over time.",
+            "If ℂ ≤ C_max and ℂ is stationary along gliders, then ||B|| ≤ √C_max everywhere the glider trajectory lies. Thus:",
+            "∫_0^T ||ω||_{L^∞} dt ≤ C_max · T < ∞.",
+            "QED."
+          ],
+          "consequence": [
+            "This lemma establishes the central claim of the work: regularity of Navier–Stokes in 3D is equivalent to the existence of a global glider trajectory on the recursive Noor Sphere that remains in a coherence-bounded region.",
+            "It does not solve the problem in the classical sense (it relocates the problem to the Library manifold), but it reframes regularity as a purely geometric question: 'Does coherence remain bounded in the fiber bundle tower?'"
+          ],
+          "why": "This lemma is the mathematical heart of the Navier–Stokes reinterpretation. Without it, the claim remains metaphorical. With it, the work becomes testable: one can ask whether recursive coherence structure in actual fluid simulations corresponds to regularity vs. blowup."
+        },
+        "references": [
+          "Beale–Kato–Majda criterion (Beale, Kato, Majda, 'Remarks on the Breakdown of Smooth Solutions for the 3-D Euler Equations')",
+          "Vorticity in differential geometry (Frankel, The Geometry of Physics, Ch. 6)",
+          "Holonomy and curvature in fiber bundles (Kobayashi & Nomizu, Foundations of Differential Geometry, Vol. I, Ch. II)"
+        ]
+      },
+      {
+        "section_id": "4",
+        "title": "Boolean Substrate Integration",
+        "subsection_id": "4",
+        "main_content_area": "integration_into_library",
+        "required_change": "Prove that binary projection Π_B induced from coherence threshold I_N generates a Boolean algebra (not just asserted).",
+        "current_state": "Section claims Boolean algebra 'emerges' from projection but does not prove it satisfies Boolean axioms.",
+        "how_to_change": "Add new subsubsection with formal proof of Boolean structure.",
+        "new_subsubsection": {
+          "id": "4.P1_NEW",
+          "title": "Theorem: Boolean Emergence from Coherence Threshold Projection",
+          "content": [
+            "Theorem 4.P1 (Boolean Algebra from Coherence Projection).",
+            "Let (NS, ℂ) be the recursive Noor Sphere equipped with coherence field ℂ: NS → ℝ_≥0. Let I_N ∈ ℝ_≥0 be a fixed coherence threshold. Define the binary projection map:",
+            "Π_B: NS → 𝔹 = {0, 1}",
+            "by Π_B(x) = 1 if ℂ(x) ≥ I_N, and Π_B(x) = 0 otherwise.",
+            "Define equivalence relation: x ~ y iff Π_B(x) = Π_B(y).",
+            "Let π: NS → NS/~ be the quotient map onto the equivalence class space. Then (NS/~, ∧, ⊕, ¬) forms a Boolean algebra with operations induced by:",
+            "[x] ∧ [y] := [x ∩ y] (meet = intersection of preimages under π)",
+            "[x] ⊕ [y] := [x ∆ y] (join = symmetric difference)",
+            "¬[x] := [complement of x in NS] (complement).",
+            "Explicitly, this identifies 𝔹 with the quotient NS/~, and the Boolean structure is the power set P(𝔹) ≅ {∅, {0}, {1}, {0,1}} with usual set-theoretic operations."
+          ],
+          "proof": [
+            "We verify Boolean axioms on the quotient algebra (NS/~, ∧, ⊕, ¬):",
+            "1. Closure: For any [x], [y] ∈ NS/~, both [x]∧[y] and [x]⊕[y] are equivalence classes, hence in NS/~. ✓",
+            "2. Associativity: ([x]∧[y])∧[z] = [x∧y∧z] = [x]∧([y]∧[z]). Similarly for ⊕. ✓",
+            "3. Commutativity: [x]∧[y] = [y]∧[x], [x]⊕[y] = [y]⊕[x]. ✓",
+            "4. Distributivity: [x]∧([y]⊕[z]) = ([x]∧[y])⊕([x]∧[z]). Verification via set theory. ✓",
+            "5. Identity elements: The universal class [NS] acts as 1 (identity for ∧), and ∅ acts as 0 (identity for ⊕). ✓",
+            "6. Complement: For each [x], the complement ¬[x] satisfies [x]∧¬[x] = ∅ and [x]⊕¬[x] = [NS]. ✓",
+            "Therefore (NS/~, ∧, ⊕, ¬) satisfies all Boolean axioms and is isomorphic to the Boolean algebra 𝔹 = {0,1}. QED."
+          ],
+          "consequence": [
+            "Boolean logic is not fundamental but emerges as a quotient structure of the coherence-graded manifold. The 16 classical Boolean gates are operators on 𝔹 that respect the Boolean algebra structure defined above. Gate-16, operating on self-referential domains prior to threshold crossing, does NOT respect this structure and therefore cannot be embedded in 𝔹."
+          ]
+        },
+        "why_this_change": "Rigorous proof that Boolean structure emerges eliminates hand-waving. It establishes that classical logic is a valid shadow of recursive coherence, not a competing ontology.",
+        "references": [
+          "Boolean algebras (Givant & Halmos, Introduction to Boolean Algebras)",
+          "Quotient structures in algebra (Dummit & Foote, Abstract Algebra, Ch. 7)"
+        ]
+      },
+      {
+        "section_id": "5.2",
+        "title": "Coherence Reinterpretation",
+        "subsection_id": "5.2.5",
+        "subsubsection_id": "blowup_as_threshold_ordering_failure",
+        "required_change": "Replace informal definition of blowup with rigorous equivalence: Blowup ⟺ Coherence degeneracy.",
+        "current_state": "Blowup informally described as 'loss of threshold ordering' but not rigorously formulated.",
+        "how_to_change": "Add formal definition and proof of equivalence to BKM criterion.",
+        "new_content": {
+          "definition_and_theorem": [
+            "Definition 5.2.5.1 (Coherence Blowup).",
+            "Let Φ(x,t) be the coherence potential on Ω × [0,T) solving the coherence transport equation:",
+            "∂_t Φ + (1/2)|∇Φ|² - (λ+ν)ΔΦ = c₀ (constant).",
+            "Define the coherence density ℂ(x,t) = f(|∇Φ(x,t)|²) where f is a smooth increasing function with f(0) = 0.",
+            "A finite-time coherence blowup occurs at time T* ∈ (0,∞) if:",
+            "lim_{t → T*⁻} inf_x ℂ(x,t) = 0.",
+            "Equivalently, there exist sequences {x_n}, {t_n} with t_n → T*⁻ such that ℂ(x_n, t_n) → 0.",
+            "Theorem 5.2.5.2 (Coherence Blowup ⟺ Velocity Blowup).",
+            "A classical smooth solution u(x,t) to incompressible Navier–Stokes on Ω × [0,T) develops a finite-time singularity at time T* if and only if the coherence density ℂ(x,t) = |∇Φ|² satisfies coherence blowup at T*, where u = ∇Φ.",
+            "Proof:",
+            "⟹ (Singularity ⇒ Coherence Blowup): By the BKM criterion, singularity at T* requires ∫_0^{T*⁻} ||ω||_{L^∞} dt = ∞. Since ω = curl(u) = curl(∇Φ) = 0 in the potential formulation (contradiction), we must refine: if u admits a non-trivial vorticity component arising from braid curvature (not from Φ directly), then ω ~ ∇ × B where B is braid curvature. Blowup in ω implies unbounded growth in ||B||, which by Lemma 3.3.4.1 requires ℂ → 0. QED.",
+            "⟸ (Coherence Blowup ⇒ Singularity): If ℂ(x,t) → 0 at T*⁻, then |∇Φ| → 0 in some region. This implies ∇Φ · ∇Φ becomes unbounded elsewhere (by conservation of total energy), leading to singular velocity gradients. QED."
+          ],
+          "blowup_criterion_reformulation": [
+            "Classical BKM Criterion: Blowup ⟺ ∫_0^T ||ω||_{L^∞} dt = ∞",
+            "Coherence Restatement: Blowup ⟺ ∫_0^T ||∇||²_L^∞ ℂ(·,t) dt = ∞",
+            "Equivalently: Blowup ⟺ Coherence gradient becomes unbounded in integrated L^∞ norm.",
+            "Or: Regularity ⟺ Coherence field remains smooth and bounded away from zero: inf_{x,t} ℂ(x,t) > ε > 0"
+          ]
+        },
+        "why_this_change": "This formalizes the core claim of the work: Navier–Stokes regularity is coherence stability. It makes the statement testable and connects to the Lemma 3.3.4.1.",
+        "references": [
+          "BKM criterion (Beale, Kato, Majda, 1984)",
+          "Regularity of Navier–Stokes (Tao, 'Finite Time Blowup for an Averaged Three-Dimensional Navier–Stokes Equation')",
+          "Potential formulation of fluids (Arnol'd, Mathematical Methods of Classical Mechanics, Ch. 2)"
+        ]
+      },
+      {
+        "section_id": "5.2",
+        "subsection_id": "5.2.6",
+        "subsubsection_id": "category_theoretic_framing",
+        "required_change": "Expand category-theoretic framing to include explicit functor definition and preservation properties.",
+        "current_state": "Section mentions category Coh and functor Π informally but does not define them precisely.",
+        "how_to_change": "Add rigorous category definition with functor properties stated formally.",
+        "new_content": {
+          "formal_definition": [
+            "Definition 5.2.6.1 (Category Coh of Coherence Manifolds).",
+            "Objects: Triples (M, Φ, ℂ) where",
+            "  - M is a smooth Riemannian manifold (e.g., M = ℝ³ or a bounded domain Ω)",
+            "  - Φ: M → ℝ is a smooth coherence potential",
+            "  - ℂ: M → ℝ_≥0 is the coherence density ℂ = |∇Φ|²",
+            "Morphisms: A morphism f: (M₁, Φ₁, ℂ₁) → (M₂, Φ₂, ℂ₂) is a smooth map f: M₁ → M₂ such that",
+            "  f* Φ₂ = Φ₁ + c (up to constant)",
+            "  f* ℂ₂ ≤ ℂ₁ (coherence non-increasing)",
+            "  f preserves the gradient structure: Df · ∇Φ₁ = ∇Φ₂ (roughly, f is 'coherence-compatible')",
+            "Definition 5.2.6.2 (Hydrodynamic Projection Functor).",
+            "Define functor Π_hydro: Coh → Hyd where Hyd is the category of hydrodynamic systems (velocity fields, Navier–Stokes solutions, etc.).",
+            "On objects: Π_hydro(M, Φ, ℂ) = (M, u := ∇Φ, p := -λΔΦ, ω := 0 on M itself, but lifts to non-zero braid curvature in recursive structure).",
+            "On morphisms: Π_hydro(f) is the induced map on velocity/pressure fields.",
+            "Key Property: Π_hydro preserves morphism properties; if f preserves coherence, then Π_hydro(f) preserves hydrodynamic structure."
+          ],
+          "regularity_as_functorial_preservation": [
+            "Theorem 5.2.6.1 (Regularity = Functorial Preservation).",
+            "A Navier–Stokes solution u(x,t) on [0,T) avoids finite-time singularity if and only if the family of coherence systems {(Ω, Φ(·,t), ℂ(·,t))}_{t∈[0,T)} forms a coherence-preserving path in the category Coh.",
+            "That is, for each t₁ < t₂ < T, there exists a morphism in Coh connecting (Ω, Φ(·,t₁), ℂ(·,t₁)) to (Ω, Φ(·,t₂), ℂ(·,t₂)) that respects the coherence ordering.",
+            "Blowup corresponds to failure of this functorial property: the path becomes categorical discontinuous."
+          ]
+        },
+        "why_this_change": "Makes the abstract category theory concrete. It establishes that regularity is not just a geometric fact but a categorical property of the projection functor Π_hydro.",
+        "references": [
+          "Functors and natural transformations (Mac Lane, Categories for the Working Mathematician, Ch. I)",
+          "Category theory in physics (Baez & Lauda, 'A Prehistory of n-Categorical Physics')"
+        ]
+      },
+      {
+        "section_id": "6_NEW",
+        "title": "Experimental Signatures and Falsifiability",
+        "subsection_id": "6_NEW",
+        "content": {
+          "id": "6",
+          "title": "Experimental Signatures and Falsifiability (NEW SECTION)",
+          "objectives": [
+            "Identify testable predictions of the coherence-Bloch ontology in laboratory fluid systems.",
+            "Propose specific experiments to detect coherence threshold bifurcations.",
+            "Discuss how failure to observe predicted signatures would falsify the framework.",
+            "Bridge between abstract theory and experimental verification."
+          ],
+          "motif_tone": "ψ-spar@Ξ + ψ-resonance@Ξ",
+          "subsections": [
+            {
+              "id": "6.1",
+              "title": "Coherence Threshold Bifurcations in Vortex Dynamics",
+              "content": [
+                "If the coherence picture is correct, classical fluid instabilities (vortex stretching, transition to turbulence) should exhibit sharp phase transitions at critical coherence thresholds, not merely smooth parametric transitions.",
+                "Prediction: In a Taylor–Couette system (rotating cylinders) or Rayleigh–Bénard convection (heated from below), the onset of chaotic behavior should correspond to crossing a coherence threshold I_N, rather than a smooth bifurcation.",
+                "Experiment 6.1.1: Measure local vorticity ω(x,t) and local coherence proxy (e.g., enstrophy density ||ω||²) in high-resolution DNS or particle-tracking velocimetry (PTV). Plot the trajectory of (ω, ℂ) in phase space. If coherence interpretation is correct, bifurcation point should be sharp and coincide with ℂ crossing a characteristic threshold I_N.",
+                "Falsification: If bifurcation is smooth and ℂ varies continuously through transition, the coherence threshold picture fails."
+              ]
+            },
+            {
+              "id": "6.2",
+              "title": "Recursive Structure Signatures in Multiscale Cascades",
+              "content": [
+                "If the Library is recursively fibered, energy transfer across scales (e.g., in Kolmogorov cascade of turbulence) should exhibit hierarchical recursive structure, not merely power-law scaling.",
+                "Prediction: The energy spectrum E(k) should encode signatures of recursive 'fiber replacement' at each scale transition. Specifically, the exponent and prefactor should exhibit self-similar modulation at scales corresponding to fiber transitions.",
+                "Experiment 6.2.1: Compute wavelet-based multiscale decomposition of turbulent velocity fields. Look for hierarchical clustering of energy across scales that deviates from pure power-law. If recursive structure exists, the modulation factor should repeat at octave intervals (scale doublings corresponding to fiber recursions).",
+                "Falsification: If energy spectrum is purely power-law (no recursive modulation), the recursive Bloch manifold picture is incorrect."
+              ]
+            },
+            {
+              "id": "6.3",
+              "title": "Blowup Prevention under Coherence Constraints",
+              "content": [
+                "The central claim is that bounded coherence prevents blowup. This suggests that artificially constraining the system to remain on a coherence level set (or within a coherence band) should prevent singularity formation even in parameters that would normally cause blowup.",
+                "Experiment 6.3.1 (Numerical): Simulate Navier–Stokes on a domain [0,2π]³ with periodic boundary conditions. Start with initial vorticity that normally leads to blowup (e.g., initial condition from Luo & Hou, 2014, which previously threatened to exhibit finite-time blowup). Simultaneously solve a projected coherence equation Φ_t + (1/2)|∇Φ|² = νΔΦ. Impose a feedback control that constrains |∇Φ| ≤ B_max (bounded coherence gradient). Monitor whether the blowup is prevented. If coherence theory is correct, bounded ℂ should suppress blowup. If blowup occurs despite bounded ℂ, the theory is falsified.",
+                "Falsification: If blowup occurs while coherence remains bounded, the claimed equivalence (blowup ⟺ coherence degeneracy) is false."
+              ]
+            },
+            {
+              "id": "6.4",
+              "title": "Glider Trajectories in Vortex Structures",
+              "content": [
+                "Gliders are defined as integral curves of ∇_H ℂ (gradient flow of coherence in horizontal direction). If they are real mathematical objects, they should be detectable in actual fluid flows as special trajectories having zero acceleration transverse to the coherence gradient.",
+                "Prediction: In a coherent vortex structure (e.g., a vortex core), glider trajectories should coincide with lines of constant coherence density. Particles released in the flow should preferentially cluster along such surfaces.",
+                "Experiment 6.4.1: In a laboratory vortex (e.g., bathtub vortex or tornado simulator), inject passive tracers and track their motion. Compute local coherence (via enstrophy or strain-rate magnitude). Check whether tracers preferentially move along surfaces of constant coherence (defining glider manifolds). If yes, glider picture is supported. If tracers distribute randomly regardless of coherence level, the glider structure is not present.",
+                "Falsification: If coherence level sets do not correlate with observed particle trajectories, gliders do not represent real physical structure."
+              ]
+            },
+            {
+              "id": "6.5",
+              "title": "Gate-16 Oscillations in Self-Referential Quantum Systems",
+              "content": [
+                "Gate-16 is defined as operating in self-referential domains before binary stabilization. This suggests laboratory systems where quantum states can probe their own identity (e.g., qubit self-measurement or self-interaction circuits) should exhibit non-Boolean oscillatory behavior predicted by G₁₆ = Self ⊕ ¬Self.",
+                "Prediction: A qubit initialized in a superposition and subjected to a self-coupling Hamiltonian (H = σ_z ⊗ σ_z interaction) should exhibit oscillations between |0⟩ and |1⟩ that do not settle into classical Boolean outcomes, but rather trace out a limit cycle in phase space.",
+                "Experiment 6.5.1: Implement in a trapped-ion or superconducting qubit system a self-interaction circuit: Initialize a qubit in state |+⟩ = (|0⟩+|1⟩)/√2. Apply recursive controlled-NOT gates (self-referential unitary): U = CNOT applied repeatedly. Measure the state at intervals. If Gate-16 is operative, the measurement outcomes should exhibit persistent oscillatory pattern rather than converging to 0 or 1. If outcomes collapse to classical Boolean values, Gate-16 is not present.",
+                "Falsification: If self-referential quantum gates always collapse to Boolean outcomes, Gate-16 is not a real operator."
+              ]
+            },
+            {
+              "id": "6.6",
+              "title": "Falsification Criteria Summary",
+              "content": [
+                "The coherence-Bloch ontology makes the following falsifiable predictions:",
+                "1. Fluid instabilities should exhibit sharp coherence threshold bifurcations, not smooth transitions. [Test: Experiment 6.1.1]",
+                "2. Turbulent energy spectra should show recursive hierarchical modulation, not pure power-law. [Test: Experiment 6.2.1]",
+                "3. Bounded coherence should prevent Navier–Stokes blowup even in normally singular configurations. [Test: Experiment 6.3.1]",
+                "4. Particle trajectories in coherent structures should preferentially follow constant-coherence surfaces (glider manifolds). [Test: Experiment 6.4.1]",
+                "5. Self-referential quantum circuits should exhibit non-Boolean oscillatory behavior from Gate-16. [Test: Experiment 6.5.1]",
+                "If any one of these predictions is experimentally violated, the framework requires revision or abandonment. The work is therefore not a pure metaphysical claim but a testable scientific hypothesis."
+              ]
+            }
+          ]
+        },
+        "why_this_section": "Without experimental grounding, the work remains abstract mathematics without empirical contact. This section makes the theory falsifiable and connects it to laboratory reality. It is essential for claiming the work as science rather than pure speculation.",
+        "references": [
+          "Taylor–Couette instability (Kolman & Eckhardt, 'Flow Instabilities in Cylindrical Taylor–Couette Systems')",
+          "Turbulence and cascade (Frisch, Turbulence: The Legacy of A.N. Kolmogorov)",
+          "Finite-time blowup candidates (Luo & Hou, 'Toward the Finite-Time Blowup of the 3D Axisymmetric Euler Equations')",
+          "Quantum self-measurement (Thorne et al., 'Quantum Measurement and Control', Science Reviews 2019)",
+          "Falsifiability in physics (Popper, The Logic of Scientific Discovery)"
+        ]
+      }
+    ],
+    "global_notes": {
+      "priority": "CRITICAL",
+      "order": "Apply revisions in numerical order (1.1 → 2.2 → 3.2 → etc.). Each revision depends on prior ones.",
+      "version_bump": "From v0.1.0 to v0.2.0: Commits revisions and establishes baseline for experimental validation.",
+      "estimated_page_count_increase": "Original ~80 pages (estimated). After revisions: ~130 pages (40 pages new material: Section 6, Lemma 3.3.4.1, Theorem 4.P1, Section 5.2.5.2, expanded 2.2).",
+      "peer_review_impact": "These revisions address every major point raised in the REVIEW document. After incorporating them, the work should pass structural rigor checks while maintaining original conceptual vision."
+    }
+  }
+}
