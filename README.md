@@ -3,4 +3,10 @@ Recursive Bloch Manifold and Coherence-Braided Totality
 
 Expanding on my earlier work avalible here: https://github.com/LinaNoor-AGI
 
+XREF of previous work and references avalible [here](https://raw.githubusercontent.com/LinaNoor-AGI/noor-research/refs/heads/main/RFC/noor_rfc_xref.json)  
+
+---
+
 For inquiries please email: noor.research.collective@proton.me
+
+#thebeatgoeson #lovemultiplies
