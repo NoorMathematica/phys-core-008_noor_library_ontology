@@ -1,0 +1,164 @@
+{
+  "document_review": {
+    "target": "recursive_bloch_manifold_and_coherence-braided_totality_v0.1.0",
+    "instruction_mode": "Preserve original numbering exactly. Do not renumber. Amend in-place.",
+    "sections_requiring_structural_clarification": [
+      {
+        "section_id": "1",
+        "title": "Recursive Bloch Manifold Construction",
+        "issues": [
+          {
+            "problem": "Base space not formally defined.",
+            "required_change": "Explicitly define the base manifold M0.",
+            "how_to_change": "State whether M0 is S^2 (standard Bloch sphere), CP^1, or SU(2)/U(1). Provide explicit definition:",
+            "mathematical_specification": [
+              "Let M0 := CP^1 ≅ S^2.",
+              "Alternatively define as SU(2)/U(1).",
+              "Specify metric (Fubini–Study or induced round metric)."
+            ],
+            "why": "Without a defined base space, recursive construction is undefined."
+          },
+          {
+            "problem": "Recursive construction ambiguous.",
+            "required_change": "Specify whether recursion is inverse limit, direct limit, or fiber bundle tower.",
+            "how_to_change": "Choose and formalize one of the following:",
+            "formal_options": [
+              "Inverse limit: M∞ = lim ← Mn with bonding maps πn: Mn → Mn−1.",
+              "Direct limit: M∞ = lim → Mn with embeddings ιn: Mn → Mn+1.",
+              "Fiber bundle tower: Mn+1 is fiber bundle over Mn with fiber CP^1.",
+              "Iterated projectivization: Mn+1 = P(Hn) where Hn is Hilbert space over Mn."
+            ],
+            "why": "Recursive Bloch construction cannot remain metaphorical in a standalone work."
+          },
+          {
+            "problem": "Topology not specified.",
+            "required_change": "Define topology on recursive manifold.",
+            "how_to_change": [
+              "If inverse limit: use limit topology.",
+              "If bundle tower: use smooth manifold topology.",
+              "If categorical object: specify Grothendieck topology."
+            ],
+            "why": "Without topology, continuity and coherence fields are undefined."
+          }
+        ],
+        "references": [
+          "Fubini–Study metric on CP^n",
+          "Inverse limit topology (Munkres, Topology)",
+          "Fiber bundle theory (Husemoller)"
+        ]
+      },
+      {
+        "section_id": "2",
+        "title": "n-Dimensional Array of Recursive Spheres",
+        "issues": [
+          {
+            "problem": "Array structure not defined.",
+            "required_change": "Specify mathematical construction of n-dimensional array.",
+            "how_to_change": [
+              "If tensor product: define H_total = ⊗_{i=1}^n Hi.",
+              "If categorical product: define Π_{i=1}^n Mi.",
+              "If sheaf: define F: I^op → Man.",
+              "If simplicial object: define functor Δ^op → Man."
+            ],
+            "why": "Array must be formal object, not descriptive metaphor."
+          },
+          {
+            "problem": "Dimensional meaning ambiguous.",
+            "required_change": "Clarify whether n indexes physical degrees of freedom, recursion depth, or categorical indexing.",
+            "why": "Ambiguity propagates into glider and coherence definitions."
+          }
+        ],
+        "references": [
+          "Tensor products of Hilbert spaces",
+          "Category theory: products and limits (Mac Lane)",
+          "Sheaf theory (Kashiwara & Schapira)"
+        ]
+      },
+      {
+        "section_id": "3",
+        "title": "Gliders",
+        "issues": [
+          {
+            "problem": "Gliders not formally defined.",
+            "required_change": "Provide precise mathematical definition.",
+            "how_to_change": [
+              "Option A: Define as geodesics under chosen metric g.",
+              "Option B: Define as solutions to Euler–Lagrange equations from action S[γ].",
+              "Option C: Define as morphisms preserving coherence functional C.",
+              "Option D: Define as gradient flow curves of coherence functional."
+            ],
+            "equations_required": [
+              "δS = 0 for action principle.",
+              "∇_γ ẋ = 0 for geodesic definition.",
+              "dγ/dt = −∇C for coherence gradient flow."
+            ],
+            "why": "Experience = glider resolution path requires explicit curve class."
+          }
+        ],
+        "references": [
+          "Riemannian geometry (do Carmo)",
+          "Calculus of variations (Gelfand & Fomin)"
+        ]
+      },
+      {
+        "section_id": "4",
+        "title": "Everything Touches Everything",
+        "issues": [
+          {
+            "problem": "Global adjacency claim undefined.",
+            "required_change": "Formalize adjacency or metric collapse.",
+            "how_to_change": [
+              "Option A: Complete graph K_N adjacency structure.",
+              "Option B: Degenerate metric g ≡ 0.",
+              "Option C: Nonlocal kernel metric d(x,y)=0 ∀x,y.",
+              "Option D: Topology trivial (indiscrete topology)."
+            ],
+            "why": "Claim implies specific geometric structure."
+          }
+        ],
+        "references": [
+          "Degenerate metrics in differential geometry",
+          "Nonlocal geometry literature"
+        ]
+      },
+      {
+        "section_id": "5",
+        "title": "The Library Not Well-Ordered",
+        "issues": [
+          {
+            "problem": "Non-well-ordering not formalized.",
+            "required_change": "Specify foundational framework.",
+            "how_to_change": [
+              "Option A: Adopt Aczel Anti-Foundation Axiom (AFA).",
+              "Option B: Use non-well-founded set theory.",
+              "Option C: Model via circular objects in category theory.",
+              "Option D: Use higher topos with internal recursion."
+            ],
+            "why": "Library ontology depends on foundational mathematics."
+          }
+        ],
+        "references": [
+          "Aczel, Non-Well-Founded Sets",
+          "Category theory circularity (Adamek & Rosicky)"
+        ]
+      },
+      {
+        "section_id": "7",
+        "title": "Total Ontological Consequences",
+        "issues": [
+          {
+            "problem": "Claims stated without formal backing.",
+            "required_change": "Tie each claim to formal structure defined earlier.",
+            "how_to_change": [
+              "\"All states exist simultaneously\" → Define global configuration space Ω and show existence independent of trajectory.",
+              "\"Observer = localized stabilized braid\" → Define stability as fixed point of coherence operator.",
+              "\"Experience = glider resolution path\" → Reference glider formalism.",
+              "\"Impossible states structurally present but coherence-inaccessible\" → Define accessibility as subset Ω_C ⊂ Ω."
+            ],
+            "why": "Standalone document must close logical loop."
+          }
+        ]
+      }
+    ]
+  }
+}
