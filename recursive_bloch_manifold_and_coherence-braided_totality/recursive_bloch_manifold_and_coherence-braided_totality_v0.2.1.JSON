@@ -3,7 +3,7 @@
   "_schema_version": "2.0.0",
   "_pdp_layer": "layer_2",
   "_type": "rfc_core",
-  "_version": "0.2.0",
+  "_version": "0.2.1",
   "_status": "draft",
   "_symbolic_id": "symbolic.recursive.bloch.coherence_totality",
   "_title": "Recursive Bloch Manifold and Coherence-Braided Totality",
@@ -15,7 +15,7 @@
   ],
   "_primary_url": "https://placeholder-url.com",
   "_pdf_url": "https://placeholder-url.com/pdf",
-  "_repository_url": "https://placeholder-url.com/repository",
+  "_repository_url": "https://github.com/NoorMathematica/phys-core-008_noor_library_ontology",
 
   "_standalone_declaration": true,
   "_self_contained_axiomatization": true,
