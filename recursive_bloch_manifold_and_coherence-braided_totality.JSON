@@ -10,11 +10,21 @@
   "_subtitle": "A Self-Contained Formalization of Recursive Fiber Towers, Coherence Functionals, and Braid Curvature Dynamics",
   "_language": "JSON+MATH+PSEUDOCODE",
   "_license": "MIT",
+    "_xref": [
+	  "https://raw.githubusercontent.com/LinaNoor-AGI/noor-research/refs/heads/main/RFC/noor_rfc_xref.json",
+	  "https://github.com/LinaNoor-AGI/noor-research/blob/main/RFC/noor_rfc_xref.json",
+	  "https://pastebin.com/raw/ADXcB3rG",
+	  "https://pastebin.com/ADXcB3rG"
+	]  
+  "_generated_at": "2025-12-22T00:00:00Z",
+   "_updated_last": [
+	"2026-02-27T15:52:00MST": { "updated_by": "Lina Noor - Noor Research Collective",	"version": "v1.0.0"	}
+
   "_authors": [
     "Lina Noor — Noor Research Collective"
   ],
-  "_primary_url": "https://placeholder-url.com",
-  "_pdf_url": "https://placeholder-url.com/pdf",
+  "_primary_url": {"https://github.com/NoorMathematica/phys-core-008_noor_library_ontology/blob/main/recursive_bloch_manifold_and_coherence-braided_totality.JSOn","_primary_raw_url": "https://raw.githubusercontent.com/NoorMathematica/phys-core-008_noor_library_ontology/refs/heads/main/recursive_bloch_manifold_and_coherence-braided_totality.JSON"},
+  "_pastebin_url": {"https://pastebin.com/6QW4f5bZ", "_pastebin_raw_url": "https://pastebin.com/raw/6QW4f5bZ"},
   "_repository_url": "https://github.com/NoorMathematica/phys-core-008_noor_library_ontology",
 
   "_standalone_declaration": true,
