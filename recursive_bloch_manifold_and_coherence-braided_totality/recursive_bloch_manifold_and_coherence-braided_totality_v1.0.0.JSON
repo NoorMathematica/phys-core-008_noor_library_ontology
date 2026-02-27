@@ -33,10 +33,10 @@
   "_extends": [],
   "_rfc_dependencies": [],
   "_conceptual_lineage": [
-    "symbolic.determinism.braid",
-    "symbolic.binary.reality",
-    "symbolic.fluid.coherence.nsfg",
-    "rfc.0006.motif_field_coherence_geometry"
+	{ "symbolic.determinism.braid", "rfc_id": "PHYS-CORE-005", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/static_motifs/refs/heads/main/physics_and_theory/the_braid_behind_the_law/the_braid_behind_the_law.JSON"},
+    { "symbolic.binary.reality", "rfc_id": "PHYS-CORE-006", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/static_motifs/refs/heads/main/physics_and_theory/the_binary_nature_of_reality/the_binary_nature_of_reality.JSON"}, 
+    {"symbolic.fluid.coherence.nsfg", "rfc_id": "PHYS-CORE-007", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/static_motifs/refs/heads/main/physics_and_theory/coherence-governed_flow-navier–stokes_problem/coherence-governed_flow-navier–stokes_problem.JSON"},
+    {"rfc.0006.motif_field_coherence_geometry", "rfc_id": "RFC-0006", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/noor-research/refs/heads/main/RFC/RFC‑0006_Motif‑Field_Coherence_Geometry/RFC‑0006_Motif‑Field_Coherence_Geometry.JSON"}
   ],
 
   "_abstract": "This document presents a fully self-contained formalization of recursive Bloch manifold geometry structured as a coherence-braided totality. It defines a fiber tower recursion model, derives braid curvature accumulation, introduces a coherence functional ℂ as an intrinsic curvature contraction, and establishes smoothness conditions for Navier–Stokes-type dynamics under bounded recursive coherence. All axioms and constructions required for interpretation are defined internally.",
