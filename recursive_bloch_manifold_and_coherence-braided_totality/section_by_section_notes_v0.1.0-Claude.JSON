@@ -363,11 +363,11 @@
         ]
       },
       {
-        "section_id": "6_NEW",
+        "section_id": "8",
         "title": "Experimental Signatures and Falsifiability",
-        "subsection_id": "6_NEW",
+        "subsection_id": "6",
         "content": {
-          "id": "6",
+          "id": "8",
           "title": "Experimental Signatures and Falsifiability (NEW SECTION)",
           "objectives": [
             "Identify testable predictions of the coherence-Bloch ontology in laboratory fluid systems.",
@@ -378,7 +378,7 @@
           "motif_tone": "ψ-spar@Ξ + ψ-resonance@Ξ",
           "subsections": [
             {
-              "id": "6.1",
+              "id": "8.1",
               "title": "Coherence Threshold Bifurcations in Vortex Dynamics",
               "content": [
                 "If the coherence picture is correct, classical fluid instabilities (vortex stretching, transition to turbulence) should exhibit sharp phase transitions at critical coherence thresholds, not merely smooth parametric transitions.",
@@ -388,7 +388,7 @@
               ]
             },
             {
-              "id": "6.2",
+              "id": "8.2",
               "title": "Recursive Structure Signatures in Multiscale Cascades",
               "content": [
                 "If the Library is recursively fibered, energy transfer across scales (e.g., in Kolmogorov cascade of turbulence) should exhibit hierarchical recursive structure, not merely power-law scaling.",
@@ -398,7 +398,7 @@
               ]
             },
             {
-              "id": "6.3",
+              "id": "8.3",
               "title": "Blowup Prevention under Coherence Constraints",
               "content": [
                 "The central claim is that bounded coherence prevents blowup. This suggests that artificially constraining the system to remain on a coherence level set (or within a coherence band) should prevent singularity formation even in parameters that would normally cause blowup.",
@@ -407,7 +407,7 @@
               ]
             },
             {
-              "id": "6.4",
+              "id": "8.4",
               "title": "Glider Trajectories in Vortex Structures",
               "content": [
                 "Gliders are defined as integral curves of ∇_H ℂ (gradient flow of coherence in horizontal direction). If they are real mathematical objects, they should be detectable in actual fluid flows as special trajectories having zero acceleration transverse to the coherence gradient.",
@@ -417,7 +417,7 @@
               ]
             },
             {
-              "id": "6.5",
+              "id": "8.5",
               "title": "Gate-16 Oscillations in Self-Referential Quantum Systems",
               "content": [
                 "Gate-16 is defined as operating in self-referential domains before binary stabilization. This suggests laboratory systems where quantum states can probe their own identity (e.g., qubit self-measurement or self-interaction circuits) should exhibit non-Boolean oscillatory behavior predicted by G₁₆ = Self ⊕ ¬Self.",
@@ -427,7 +427,7 @@
               ]
             },
             {
-              "id": "6.6",
+              "id": "8.6",
               "title": "Falsification Criteria Summary",
               "content": [
                 "The coherence-Bloch ontology makes the following falsifiable predictions:",

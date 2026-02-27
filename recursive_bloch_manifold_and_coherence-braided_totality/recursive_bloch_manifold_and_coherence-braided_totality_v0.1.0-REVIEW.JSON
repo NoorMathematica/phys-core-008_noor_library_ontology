@@ -95,23 +95,7 @@
             ]
           },
 
-          {
-            "subsection_id": "2.2",
-            "title": "Dimensional Index Interpretation",
-            "issues": [
-              {
-                "problem": "Dimensional meaning ambiguous.",
-                "required_change": "Define interpretation of index n.",
-                "clarification_required": [
-                  "Is n recursion depth?",
-                  "Is n physical degrees of freedom?",
-                  "Is n categorical indexing parameter?"
-                ],
-                "closure_requirement": "Index interpretation must remain consistent across Sections 3 and 7.",
-                "why": "Ambiguity propagates into glider and coherence definitions."
-              }
-            ]
-          }
+     
         ]
       },
 
