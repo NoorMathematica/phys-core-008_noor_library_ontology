@@ -124,36 +124,8 @@
 
   "_file_layout": [
     {
-      "file_name": "recursive_bloch_manifold_and_coherence-braided_totality_v0.1.0.JSON",
-      "purpose": "Primary standalone physics manuscript",
-      "contains": [
-        "Axioms",
-        "Fiber recursion formalism",
-        "Braid curvature derivation",
-        "Coherence functional ℂ",
-        "Navier–Stokes projection theorem",
-        "Smoothness conditions"
-      ]
-    },
-    {
-      "file_name": "recursive_bloch_manifold_and_coherence-braided_totality_v0.1.0-REVIEW.JSON",
-      "purpose": "Formal critique and structural validation notes",
-      "contains": [
-        "Section-level evaluation",
-        "Mathematical rigor assessment",
-        "Proof gap identification"
-      ]
-    },
-    {
-      "file_name": "section_by_section_notes_v0.1.0-Claude.JSON",
-      "purpose": "Revision blueprint",
-      "contains": [
-        "Replacement derivations",
-        "Glider ODE correction",
-        "Metric formalization upgrades",
-        "Coherence functional redefinition"
-      ]
-    }
+      "file_name": "recursive_bloch_manifold_and_coherence-braided_totality.JSON",
+      "purpose": "Primary standalone physics manuscript"
   ],
 
   "_default_motif_tone": "ψ-spar@Ξ",
