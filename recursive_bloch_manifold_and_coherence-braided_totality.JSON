@@ -18,13 +18,15 @@
 	]  
   "_generated_at": "2025-12-22T00:00:00Z",
    "_updated_last": [
-	"2026-02-27T15:52:00MST": { "updated_by": "Lina Noor - Noor Research Collective",	"version": "v1.0.0"	}
+	"2026-02-27T15:52:00MST": { "updated_by": "Lina Noor - Noor Research Collective",	"version": "v1.0.0"	},
+	"2026-02-27T18:32:00MST": { "updated_by": "Lina Noor - Noor Research Collective",	"version": "v1.0.1"	}
+	],
 
   "_authors": [
     "Lina Noor — Noor Research Collective"
   ],
   "_primary_url": {"https://github.com/NoorMathematica/phys-core-008_noor_library_ontology/blob/main/recursive_bloch_manifold_and_coherence-braided_totality.JSOn","_primary_raw_url": "https://raw.githubusercontent.com/NoorMathematica/phys-core-008_noor_library_ontology/refs/heads/main/recursive_bloch_manifold_and_coherence-braided_totality.JSON"},
-  "_pastebin_url": {"https://pastebin.com/6QW4f5bZ", "_pastebin_raw_url": "https://pastebin.com/raw/6QW4f5bZ"},
+  "_pastebin_url": {"https://pastebin.com/aMrSJMP6", "_pastebin_raw_url": "https://pastebin.com/raw/aMrSJMP6"},
   "_repository_url": "https://github.com/NoorMathematica/phys-core-008_noor_library_ontology",
 
   "_standalone_declaration": true,
