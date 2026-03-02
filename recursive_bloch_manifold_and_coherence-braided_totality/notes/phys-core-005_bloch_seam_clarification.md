@@ -1,3 +1,7 @@
+Thank you. Attached is the paper we are working on and below are the notes that I have. Before we make any changes, what are your thoughts?
+
+---
+
 **In PHYS-CORE-005 (The Braid Behind the Law), ρ_lock and ℛ_braid are defined as:**
 
 - ℛ_braid = Σ_{⟨i,j⟩} ΔB_ij, where ΔB_ij = 1 − **v**_i · **v**_j — so it's a scalar sum of pairwise vector misalignment across a neighborhood. It lives in the space of *coherence vector fields*.
