@@ -122,45 +122,22 @@
         "Energy norm control in Navier–Stokes regularity proofs"
       ]
     },
-	{
-	  "id": "4.7",
-	  "title": "Connection to Braid Curvature",
-	  "content": [
-		"Boolean distinction does not arise directly from the raw curvature tensor B^a_{bc}, but from a projected and thresholded functional derived from its energy density.",
-		"At the geometric level, braid curvature is encoded tensorially as B^a_{bc} = ∇_b η^a_c − ∇_c η^a_b, with associated energy functional ℋ_k = ∫_{L_k} |B|^2 dμ_k.",
-		"Logical structure emerges only after projection from this smooth geometric layer to a discrete observable layer.",
-		"",
-		"Layering of Abstractions.",
-		"  (1) Tensor Level: B^a_{bc} — antisymmetric curvature on the recursive fiber tower.",
-		"  (2) Energy Level: ℋ_k = ∫ |B|^2 dμ_k — scalar curvature density.",
-		"  (3) Observable Projection: P(B) — projected curvature under finite-resolution or threshold operators.",
-		"  (4) Boolean Threshold: Θ(P(B)) ∈ 𝔹 — binary distinction induced by coherence thresholds.",
-		"",
-		"Thus Boolean algebra operates not on B itself, but on Θ(P(B)), a thresholded projection of curvature energy.",
-		"",
-		"Boolean distinction corresponds to minimal braid crossing under projection. When projected curvature exceeds a defined coherence threshold τ, the system registers a discrete logical transition.",
-		"",
-		"Formally, define a projection operator Π_τ such that:",
-		"  Π_τ(B) = 1  if  P(|B|^2) ≥ τ,",
-		"  Π_τ(B) = 0  otherwise.",
-		"This operator is not geometric but categorical: it collapses continuous curvature information into a two-valued algebra.",
-		"",
-		"Braid generator σ_i, when interpreted at the projected level, corresponds to the minimal crossing operator whose thresholded action induces XOR behavior on 𝔹.",
-		"That is, the algebraic crossing structure of σ_i, once projected and thresholded, reproduces the truth table of exclusive disjunction.",
-		"",
-		"Gate-16 represents unresolved braid crossing prior to projection. At the tensor level, crossings remain smooth curvature interactions within the fiber tower. Only after projection does the ambiguity collapse into classical Boolean differentiation.",
-		"",
-		"Categorical Clarification.",
-		"The Boolean substrate is therefore a functorial image of the braid-curvature category under a projection functor Θ ∘ P. It is not a separate ontological layer, but a coarse-grained representation of recursive curvature structure.",
-		"",
-		"This prevents category confusion: geometric braid curvature (smooth, tensorial, recursive) and Boolean logic (discrete, algebraic, thresholded) are related by projection, not identity.",
-		"",
-		"Accordingly, all logical gates derived in Sections 4.2–4.6 should be understood as operating on projected curvature observables rather than on raw curvature tensors.",
-		"",
-		"Hierarchy Summary.",
-		"Recursive Curvature (B) → Energy Density (|B|^2) → Projection (P) → Threshold (Θ) → Boolean Algebra (𝔹)."
-	  ]
-	}
+    {
+      "section": "4.7",
+      "title": "Connection to Braid Curvature",
+      "change_type": "minor clarification",
+      "what_changes": [
+        "Add note that Boolean projection operates on projected curvature, not raw tensor B.",
+        "Clarify layering of abstractions."
+      ],
+      "how_it_changes": [
+        "Insert paragraph distinguishing tensor-level curvature from thresholded projection used in Boolean gate formalism."
+      ],
+      "rationale": "Prevents category confusion across geometric and logical layers.",
+      "references_supporting_change": [
+        "Projection operators in category theory"
+      ]
+    }
   ],
   "sections_not_to_change": [
     "All Section 1 foundational ontology",
