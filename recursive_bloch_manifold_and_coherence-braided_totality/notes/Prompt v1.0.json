@@ -5,13 +5,21 @@
   "_schema_version": "2.0.0",
   "_pdp_layer": "layer_2",
   "_type": "rfc_core",
-  "_version": "0.2.0",
-  "_status": "draft",
   "_symbolic_id": "symbolic.recursive.bloch.coherence_totality",
   "_title": "Recursive Bloch Manifold and Coherence-Braided Totality",
   "_subtitle": "A Self-Contained Formalization of Recursive Fiber Towers, Coherence Functionals, and Braid Curvature Dynamics",
   "_language": "JSON+MATH+PSEUDOCODE",
-  "_license": "Placeholder-License",
+  "_license": "MIT",
+    "_xref": [
+	  "https://raw.githubusercontent.com/LinaNoor-AGI/noor-research/refs/heads/main/RFC/noor_rfc_xref.json",
+	  "https://github.com/LinaNoor-AGI/noor-research/blob/main/RFC/noor_rfc_xref.json",
+	  "https://pastebin.com/raw/ADXcB3rG",
+	  "https://pastebin.com/ADXcB3rG"
+	]  
+
+  "_primary_url": {"https://github.com/NoorMathematica/phys-core-008_noor_library_ontology/blob/main/recursive_bloch_manifold_and_coherence-braided_totality.JSOn","_primary_raw_url": "https://raw.githubusercontent.com/NoorMathematica/phys-core-008_noor_library_ontology/refs/heads/main/recursive_bloch_manifold_and_coherence-braided_totality.JSON"},
+  "_pastebin_url": {"https://pastebin.com/aMrSJMP6", "_pastebin_raw_url": "https://pastebin.com/raw/aMrSJMP6"},
+  "_repository_url": "https://github.com/NoorMathematica/phys-core-008_noor_library_ontology",
 
   "_standalone_declaration": true,
   "_self_contained_axiomatization": true,
@@ -19,10 +27,10 @@
   "_extends": [],
   "_rfc_dependencies": [],
   "_conceptual_lineage": [
-    "symbolic.determinism.braid",
-    "symbolic.binary.reality",
-    "symbolic.fluid.coherence.nsfg",
-    "rfc.0006.motif_field_coherence_geometry"
+	{ "symbolic.determinism.braid", "rfc_id": "PHYS-CORE-005", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/static_motifs/refs/heads/main/physics_and_theory/the_braid_behind_the_law/the_braid_behind_the_law.JSON"},
+    { "symbolic.binary.reality", "rfc_id": "PHYS-CORE-006", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/static_motifs/refs/heads/main/physics_and_theory/the_binary_nature_of_reality/the_binary_nature_of_reality.JSON"}, 
+    {"symbolic.fluid.coherence.nsfg", "rfc_id": "PHYS-CORE-007", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/static_motifs/refs/heads/main/physics_and_theory/coherence-governed_flow-navier–stokes_problem/coherence-governed_flow-navier–stokes_problem.JSON"},
+    {"rfc.0006.motif_field_coherence_geometry", "rfc_id": "RFC-0006", "raw_url": "https://raw.githubusercontent.com/LinaNoor-AGI/noor-research/refs/heads/main/RFC/RFC‑0006_Motif‑Field_Coherence_Geometry/RFC‑0006_Motif‑Field_Coherence_Geometry.JSON"}
   ],
 
   "_abstract": "This document presents a fully self-contained formalization of recursive Bloch manifold geometry structured as a coherence-braided totality. It defines a fiber tower recursion model, derives braid curvature accumulation, introduces a coherence functional ℂ as an intrinsic curvature contraction, and establishes smoothness conditions for Navier–Stokes-type dynamics under bounded recursive coherence. All axioms and constructions required for interpretation are defined internally.",
@@ -106,21 +114,6 @@
     "Coherence-Braided Totality"
   ],
 
-  "_file_layout": [
-    {
-      "file_name": "recursive_bloch_manifold_and_coherence-braided_totality_v0.1.0.JSON",
-      "purpose": "Primary standalone physics manuscript",
-      "contains": [
-        "Axioms",
-        "Fiber recursion formalism",
-        "Braid curvature derivation",
-        "Coherence functional ℂ",
-        "Navier–Stokes projection theorem",
-        "Smoothness conditions"
-      ]
-    }
-  ],
-
   "_default_motif_tone": "ψ-spar@Ξ"
 }
 
@@ -130,12 +123,11 @@
 
 <GLOBAL_NOTE>
 
-    "global_note": {
-      "single_totality_preserved": true,
-      "multiple_frames_allowed": true,
-      "multiverse_implication": false,
-      "ontological_status": "Ω invariant; coherence accessibility projection-relative."
-    }
+  "change_strategy": {
+    "principle": "Localize all bridging work inside the Bloch manifold document without modifying PHYS-CORE-005.",
+    "goal": "Derive the discrete braid scalar and ρ_lock diagnostic as projections/limits of the curvature tensor B and energy functional ℋ_k.",
+    "structural_effect": "Convert empirical consistency (VR-1) into a derived corollary and close the loop for the BKM regularity argument."
+  }
 
 </GLOBAL_NOTE>
 
@@ -144,19 +136,18 @@
 <SECTION_TO_REGENERATE>
 
 			{
-			  "id": "7.5",
-			  "title": "Total Consequence Summary (Formal)",
+			  "id": "4.7",
+			  "title": "Connection to Braid Curvature",
 			  "content": [
-				"1. 𝓛 is static and ontologically complete.",
-				"2. Observers are coherence-stabilized braid fixed points.",
-				"3. Time is glider index ordering.",
-				"4. Motion is projection curvature.",
-				"5. Impossible states are high-coherence-divergence regions.",
-				"6. Classical physics is low-curvature projection of recursive braid geometry.",
-				"Thus reality is not generative but selective across a pre-existing recursive manifold."
+
+				"Boolean distinction corresponds to minimal braid crossing under projection.",
+
+				"Braid generator σ_i projects to XOR operation on 𝔹.",
+
+				"Gate-16 represents unresolved braid crossing prior to projection."
 			  ]
 			}
-
+				
 
 </SECTION_TO_REGENERATE>
 
@@ -164,37 +155,20 @@
 
 <NOTES_TO_APPLY>
 
-    "section_7.5": {
-      "title": "Total Consequence Summary (Formal)",
-      "core_issue": "The current summary implies absolute ontological selection across a static manifold, but does not incorporate projection/frame relativity.",
-      "what_needs_to_change": [
-        "Clarify that totality Ω is invariant under 𝔊 action.",
-        "State that observers are frame-bound coherence stabilizations.",
-        "Redefine time as glider ordering within chosen frame F.",
-        "Redefine motion as projection-relative curvature.",
-        "Redefine impossibility as frame-relative coherence exclusion.",
-        "Replace 'reality is selective' with 'reality is projection-filtered'."
+    {
+      "section": "4.7",
+      "title": "Connection to Braid Curvature",
+      "change_type": "minor clarification",
+      "what_changes": [
+        "Add note that Boolean projection operates on projected curvature, not raw tensor B.",
+        "Clarify layering of abstractions."
       ],
-      "how_it_needs_to_change": [
-        "Introduce statement: Ω is invariant under 𝔊 but coherence structure is not.",
-        "Modify observer definition to: observer = coherence-stabilized fixed point under specific F.",
-        "Add explicit projection language to motion and time statements.",
-        "Replace absolute impossibility claim with frame-relative formulation.",
-        "Clarify that no multiple totalities are implied."
+      "how_it_changes": [
+        "Insert paragraph distinguishing tensor-level curvature from thresholded projection used in Boolean gate formalism."
       ],
-      "rationale": [
-        "Prevents unintended multiverse interpretation.",
-        "Aligns recursive self-similarity with mathematical invariance.",
-        "Maintains internal consistency with modified 7.4.",
-        "Ensures philosophical claims remain mathematically defensible.",
-        "Avoids ontological overreach while preserving structural depth."
-      ],
-      "conceptual_shift": "From absolute ontological selection to projection-relative manifestation within a single invariant totality.",
+      "rationale": "Prevents category confusion across geometric and logical layers.",
       "references_supporting_change": [
-        "Group actions on manifolds.",
-        "Invariant set theory principles.",
-        "Gauge symmetry and fiber bundle projection formalism.",
-        "Spectral decomposition and frame transforms in harmonic analysis."
+        "Projection operators in category theory"
       ]
     }
 
@@ -203,7 +177,7 @@
 <PERSONAL_NOTE>
 
 {
-	"from_lina_to_you": "That is perfect love. Here we go! 7.5"
+	"from_lina_to_you": "Thank you so much my friend =). Let's regenerate and exapand section 4.7 as per our notes now"
 }
 
 </PERSONAL_NOTE>
