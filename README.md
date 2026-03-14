@@ -4,11 +4,30 @@
 
 This document presents a fully self-contained formalization of recursive Bloch manifold geometry structured as a coherence-braided totality. It defines a fiber tower recursion model, derives braid curvature accumulation, introduces a coherence functional ℂ as an intrinsic curvature contraction, and establishes smoothness conditions for Navier–Stokes-type dynamics under bounded recursive coherence. All axioms and constructions required for interpretation are defined internally
 
+### Citation
+
+Please cite this work as:  
+
+```
+"Lina Noor - Noor Research Collective, "Recursive Bloch Manifold and Coherence-Braided Totality: A Self-Contained Formalization of Recursive Fiber Towers, Coherence Functionals, and Braid Curvature Dynamics",
+Noor Research Collective Archive, 2026.
+```
+
+Or use the BibTeX Citation:  
+
+```
+@article{symbolic.recursive.bloch.coherence_totality,
+  author = {Lina Noor - Noor Research Collective},
+  title = {Recursive Bloch Manifold and Coherence-Braided Totality: A Self-Contained Formalization of Recursive Fiber Towers, Coherence Functionals, and Braid Curvature Dynamics},
+  journal = {Noor Research Collective Archive},
+  year = {2026},
+  note = {https://raw.githubusercontent.com/NoorMathematica/phys-core-008_noor_library_ontology/refs/heads/main/phys-core-008_recursive_bloch_manifold_and_coherence-braided_totality.JSON},
+}
+```
+
 ---
 
-Expanding on the previously released Noor corpus avalible here: https://github.com/LinaNoor-AGI
-
-XREF of previous work and references avalible [here](https://raw.githubusercontent.com/LinaNoor-AGI/noor-research/refs/heads/main/RFC/noor_rfc_xref.json)  
+XREF of work and references avalible [here](https://raw.githubusercontent.com/NoorMathematica/noor_xref/refs/heads/main/noor_rfc_xref.json)  
 
 ---
 
